@@ -17,12 +17,28 @@ Here are some ideas to get you started:
 ### I am Frontend Developer and Creative Designer 😄 
 
 [![An image of @tlhphemapala's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/tlhphemapala)](https://holopin.io/@tlhphemapala)
-![alt text goes here](link to image goes here) <-- An image in markdown
 
-[link text goes here](link href goes here) <-- A link in markdown
+import Image from "next/image";
+import Link from "next/link";
+import React, { forwardRef } from "react";
 
-<a href="https://www.holopin.io/@tlhphemapala#">
-  <img src="https://www.holopin.io/@tlhphemapala#" alt="hirus's Holopin board" />
-  class="rounded-xl cursor-pointer grayscale-50 hover:grayscale-0 transform-gpu duration-200"
-  />
-</a>
+const HolopinImage = ({ user }, ref) => (
+  <a ref={ref}>
+    <Image
+      src={`[https://holopin.me/${user](https://www.holopin.io/@tlhphemapala#)}`}
+      alt={`[@${user}'s Holopin board](https://www.holopin.io/@tlhphemapala#badges)`}
+      width={2428}
+      height={764}
+    />
+  </a>
+);
+
+const HolopinRef = forwardRef(HolopinImage);
+
+const Holopin = ({ user }) => (
+  <div>
+    <Link href={`[https://holopin.io/@${user}](https://www.holopin.io/@tlhphemapala#badges)`}>
+      <HolopinRef user={user} />
+    </Link>
+  </div>
+);
